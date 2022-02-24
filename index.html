@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Logic Gates Interactive</title>
+</head>
+
+<body>
+    <div class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
+        <script src="./go.js"></script>
+        <script src="./figures.js"></script>
+        <div id="allSampleContent" class="p-4 w-full">
+            <script src="./core.js"></script>
+            <div style="height: 19vh;"></div>
+            <center>
+                <div id="sample">
+                    <div style="width: 100%; display: flex; justify-content: space-between">
+                        <div id="palette" style="width: 100px; height: 500px;background-color: rgb(30, 30, 50); border: solid 1px whitesmoke"></div>
+                        <!--<div id="line" style="width: 2x; height: 500px;background-color: whitesmoke;color: whitesmoke;border: solid 1px whitesmoke;"></div>-->
+                        <div id="myDiagramDiv" style="flex-grow: 1; height: 500px; border: solid 1px whitesmoke;background-color: rgb(30, 30, 50);"></div>
+                    </div>
+                    <div>
+                        <div style="visibility: hidden;">
+                            <button id="saveModel" onclick="save()">Save</button>
+                            <button onclick="load()">Load</button> Diagram Model saved in JSON format:
+                        </div>
+                        <textarea id="mySavedModel" style="width:100%;height:200px;visibility:hidden;">
+                          { "class": "GraphLinksModel",
+                          "linkFromPortIdProperty": "fromPort",
+                          "linkToPortIdProperty": "toPort",
+                          "nodeDataArray": [
+                        {"category":"input","key":"input1","loc":"-220 -100"},
+                        {"category":"or","key":"or1","loc":"-70 -40"},
+                        {"category":"not","key":"not1","loc":"60 -40"},
+                        {"category":"xor","key":"xor1","loc":"150 -80"},
+                        {"category":"output","key":"output1","loc":"160 -180"},
+                        {"category":"or","key":-4,"loc":"230 -60"}
+                        ],
+                          "linkDataArray": [
+                        {"from":"input1","fromPort":"out","to":"or1","toPort":"in1"},
+                        {"from":"or1","fromPort":"out","to":"not1","toPort":"in"},
+                        {"from":"not1","fromPort":"out","to":"or1","toPort":"in2"},
+                        {"from":"not1","fromPort":"out","to":"xor1","toPort":"in1"},
+                        {"from":"xor1","fromPort":"out","to":"output1","toPort":""},
+                        {"from":"xor1","to":-4,"fromPort":"out","toPort":"in1"},
+                        {"from":-4,"to":"xor1","fromPort":"out","toPort":"in2"}
+                        ]}
+                      </textarea>
+                    </div>
+            </center>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
