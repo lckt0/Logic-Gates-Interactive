@@ -6,5 +6,6 @@ Interactive logic-gates simulation. Made with Go.js
 - https://github.com/NorthwoodsSoftware/GoJS
 - https://github.com/sindresorhus/modern-normalize
 
+<br>
 <img src="./assets/preview.gif"></img>
 <img src="./assets/preview.png"></img>
