@@ -230,21 +230,15 @@ function updateStates() {
     myDiagram.skipsUndoManager = oldskip;
 }
 
-// helper predicate
-function linkIsTrue(link) { // assume the given Link has a Shape named "SHAPE"
+function linkIsTrue(link) {
     return link.findObject("SHAPE").stroke === green;
 }
 
-// helper function for propagating results
 function setOutputLinks(node, color) {
     node.findLinksOutOf().each(link => link.findObject("SHAPE").stroke = color);
 }
 
-// update nodes by the specific function for its type
-// determine the color of links coming out of this node based on those coming in and node type
-
 function doInput(node) {
-    // the output is just the node's Shape.fill
     setOutputLinks(node, node.findObject("NODESHAPE").fill);
 }
 
@@ -288,12 +282,9 @@ function doXnor(node) {
 }
 
 function doOutput(node) {
-    // assume there is just one input link
-    // we just need to update the node's Shape.fill
     node.linksConnected.each(link => { node.findObject("NODESHAPE").fill = link.findObject("SHAPE").stroke; });
 }
 
-// save a model to and load a model from JSON text, displayed below the Diagram
 function save() {
     document.getElementById("mySavedModel").value = myDiagram.model.toJson();
     myDiagram.isModified = false;
