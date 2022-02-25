@@ -1,9 +1,6 @@
 /*
  * GoJS v2.0.15 JavaScript Library for HTML Diagrams
- * Northwoods Software, https://www.nwoods.com/
- * GoJS and Northwoods Software are registered trademarks of Northwoods Software Corporation.
- * Copyright (C) 1998-2019 by Northwoods Software Corporation.  All Rights Reserved.
- * THIS SOFTWARE IS LICENSED.  THE LICENSE AGREEMENT IS AT: https://gojs.net/2.0.15/license.html.
+ * Cracked by LockT (https://github.com/lckt0)
  */
 (function() { var t;function aa(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function ba(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):{next:aa(a)}}function ca(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}var ea="function"==typeof Object.create?Object.create:function(a){function b(){}b.prototype=a;return new b},ia;
 if("function"==typeof Object.setPrototypeOf)ia=Object.setPrototypeOf;else{var ka;a:{var la={a:!0},ma={};try{ma.__proto__=la;ka=ma.a;break a}catch(a){}ka=!1}ia=ka?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var na=ia;
