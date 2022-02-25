@@ -1,30 +1,8 @@
 'use strict';
 /*
- *  Copyright (C) 1998-2022 by Northwoods Software Corporation. All Rights Reserved.
+ *  This file holds definitions of all standard shape figures -- string values for Shape.figure.
  */
 
-// This file holds definitions of all standard shape figures -- string values for Shape.figure.
-// You do not need to load this file in order to use named Shape figure.
-
-// The following figures are built-in to the go.js library and thus do not need to be redefined:
-//   Rectangle, Square, RoundedRectangle, Border, Ellipse, Circle,
-//   TriangleRight, TriangleDown, TriangleLeft, TriangleUp, Triangle,
-//   LineH, LineV, None, BarH, BarV, MinusLine, PlusLine, XLine
-// If you need any of the other figures that are defined in this file, we suggest that you copy
-// just those definitions into your own code.  Do not load this file unless you really want to
-// define a lot of code that your app does not use and will not get garbage-collected.
-
-// The following functions and variables are used throughout this file:
-
-/**
- * @constructor
- * @param {string} name
- * @param {number} def
- * @param {number=} min defaults to zero
- * @param {number=} max defaults to Infinity
- * @class
- * This FigureParameter class describes various properties each parameter uses in figures.
- */
 function FigureParameter(name, def, min, max) {
     if (min === undefined /*notpresent*/ ) min = 0.0;
     if (max === undefined /*notpresent*/ ) max = Infinity;
